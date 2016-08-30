@@ -1,0 +1,428 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: lighter;
+  -webkit-font-smoothing: antialiased; /* required for 'lighter' font on Chrome */
+}
+
+body {
+  margin: 0px 0px 0px 0px;
+  background-color: #fafafa;
+}
+
+/* nav menu */
+
+ul.nav {
+  width: 100%;
+  height: 48px;
+  z-index: 100;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  opacity: 1;
+  box-shadow: 0 1.5px 3px darkgrey;
+  background-color: white;
+  display: table;
+  position: fixed;
+}
+
+ul.nav.scrolled {
+  box-shadow: 0 2px 4px darkgrey;
+}
+
+ul.nav li {
+  transition: .3s;
+  display: table-cell;
+  position: relative;
+}
+
+ul.nav li.focused {
+  cursor: pointer;
+}
+
+ul.nav li a {
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  transition: .3s;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  position: absolute;
+}
+
+ul.nav li a.focused {
+  color: lightgrey;
+}
+
+/* projects drop-down nav menu */
+
+div#projects-menu {
+  width: calc(25% + 8px);
+  height: 0;
+  top: 48px;
+  left: calc(25% - 4px);
+  z-index: 100;
+  transition: 0.3s;
+  background-color: transparent;
+  position: fixed;
+}
+
+div#projects-menu.expanded {
+  height: 196px; /* numProjects x 32px + 4px */
+}
+
+div#projects-menu:hover {
+  height: 196px;
+}
+
+/* dropdown */
+
+div.dropdown-outer {
+  width: 100%;
+  height: 100%;
+  padding: 0 4px 0px 4px;
+  margin: 0;
+  overflow: hidden;
+}
+
+ul.dropdown {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 1.5px 3px darkgrey;
+  transition: height 3s;
+  opacity: 1;
+  background-color: white;
+}
+
+ul.dropdown.scrolled {
+  box-shadow: 0 3px 6px darkgrey;
+}
+
+ul.dropdown li {
+  height: 48px;
+  transition: 0.3s;
+  list-style-type: none;
+  position: relative;
+}
+
+ul.dropdown li:hover {
+  color: lightgrey;
+  cursor: pointer;
+}
+
+ul.dropdown li a {
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: inherit;
+  position: absolute;
+}
+
+/* project header */
+
+.project-header {
+  width: 100%;
+  padding: 0 32px 32px 24px;
+}
+
+.project-header h2 {
+  margin: 0;
+  padding-bottom: 4px;
+  font-size: 32px;
+}
+
+.project-header span {
+  font-size: 15px;
+  opacity: 0.6;
+  padding: 0;
+  margin-right: 0;
+}
+
+.project-header p {
+  padding-top: 16px;
+  margin: 0;
+  opacity: 0.8;
+  font-size: 16px;
+  line-height: 133%;
+}
+
+/* grid */
+
+.grid {
+  width: 100%;
+}
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* columns */
+
+[class^="col-"] {
+  width: 100%;
+  float: left;
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .col-1 {
+    width: 33.33%;
+  }
+
+  .col-2 {
+    width: 33.33%;
+  }
+
+  .col-3 {
+    width: 33.33%;
+  }
+
+  .container img {
+    max-height: 600px;
+  }
+}
+
+/* cells */
+
+[class^="cell-"] {
+  width: 100%;
+  height: 33.33%;
+  padding: 8px 8px 8px 8px;
+}
+
+.cell-1 {
+}
+
+.cell-2 {
+}
+
+.cell-3 {
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  transition: .3s;
+  border-style: solid;
+  border-width: 1px;
+  border-color: darkgrey;
+  object-fit: cover;
+  position: relative;
+}
+
+img.unfocused {
+  filter: blur(3px) grayscale(66%);
+  -webkit-filter: blur(3px) grayscale(66%);
+}
+
+.container-text-outer {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.container-text {
+  width: 100%;
+  height: 100%;
+  transition: 0.55s;
+  color: transparent;
+  background-color: transparent;
+  position: relative;
+}
+
+.container-text.focused {
+  cursor: pointer;
+  color: white;
+  opacity: .8;
+  background-color: rgba(0, 0, 0, .75);
+}
+
+.container span {
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  padding: 0 12px 0 12px;
+  color: inherit;
+  position: absolute;
+  text-align: center;
+}
+
+section#main-content {
+  padding-top: calc(48px + 32px);
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/* view pager */
+
+section#pager-container {
+  position: relative;
+}
+
+div#project-container {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/* arrow bars */
+
+div.bar {
+  width: 64px;
+  height: 100%;
+  top: 0;
+  background-color: transparent;
+  position: absolute;
+}
+
+div#bar-left {
+  left: 0;
+}
+
+div#bar-right {
+  right: 0;
+}
+
+div.bar div.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+div.bar div.container i {
+  font-size: 64px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+  color: lightgrey;
+  opacity: 0.4;
+  position: absolute;
+}
+
+div.bar div.container i:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* footer */
+
+footer {
+  margin: 0;
+  padding: 48px 0px 32px 0px;
+}
+
+/* footer blurb */
+
+div.container-blurb {
+  width: 100%;
+  padding-bottom: 4px;
+}
+
+div.container-blurb span {
+  width: 100%;
+  padding: 0;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+}
+
+div.container-blurb p {
+  margin-top: 0;
+  margin-left: 50%;
+  margin-right: 50%;
+  transform: translate(-50%);
+  opacity: .8;
+  width: 450px;
+  max-width: 75%;
+  padding-top: 16px;
+  font-size: 16px;
+  line-height: 133%;
+  text-align: center;
+}
+
+/* social media menu */
+
+div#container-social-menu {
+  width: 100%;
+  height: 48px;
+  padding-top: 24px;
+  position: relative;
+}
+
+ul.social-menu {
+  margin: 0;
+  padding: 0px;
+  height: 56px;
+  left: 50%;
+  top: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  position: absolute;
+}
+
+ul.social-menu li {
+  list-style-type: none;
+  float: left;
+  padding-top: 8px;
+  padding-left: 8px;
+}
+
+ul.social-menu li a i {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  padding-top: 8px;
+  border-radius: 20px;
+  transition: 0.2s;
+  box-shadow: 0 1.5px 3px darkgrey;
+  color: white;
+  text-align: center;
+}
+
+ul.social-menu li a i:hover {
+  opacity: 0.8;
+  box-shadow: 0 3px 6px darkgrey;
+}
+
+.fa-facebook {
+  background-color: #3b5998;
+}
+
+.fa-linkedin {
+  background-color: #007bb6;
+}
+
+.fa-github {
+  background-color: #60b044;
+}
+
+.fa-university {
+  background-color: #E87722;
+}
+
+.fa-envelope {
+  background-color: #dd4b39;
+}
