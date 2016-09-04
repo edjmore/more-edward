@@ -1,8 +1,53 @@
 <!DOCTYPE html>
 <html>
 <body>
-<p>
-  Professional
-</p>
+<div class="grid">
+  <div class="col-2" style="padding-left: 24px; padding-right: 18px;">
+    <div class="cell-2">
+      <h2>Professional Life</h2>
+      <p>
+        He’s not a word hero. He’s a word hero because he was captured. I like text that wasn’t captured. Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right? Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision.
+        <br><br>
+        An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud. My text is long and beautiful, as <span id="resume-link" class="attention-link">Résumé</span>, it has been well documented, are various other parts of my website. The best taco bowls are made in Trump Tower Grill. I love Hispanics!
+        <br><br>
+        The concept of Lorem Ipsum was created by and for the Chinese in order to make U.S. design jobs non-competitive. Be careful, or I will spill the beans on your placeholder text.
+        <br><br>
+        My text is long and beautiful, as, it has been well documented, are various other parts of my website. Look at that text! Would anyone use that? Can you imagine that, the text of your next webpage?! If Trump Ipsum weren’t my own words, perhaps I’d be dating it. I know words. I have the best words. My placeholder text, I think, is going to end up being very good with women. If Trump Ipsum weren’t my own words, perhaps I’d be dating it.
+        <br><br>
+        The other thing with Lorem Ipsum is that you have to take out its family.
+      </p>
+    </div>
+    <div>
+      
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="cell-1"></div>
+      <div id="resume-container">
+        <iframe id="resume" src="https://drive.google.com/file/d/0B39Q45Zq8Z0MRFhub3FQNWhPdUU/preview" />
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function() {
+    $('#resume-link').click(function() {
+      var $resume = $('iframe#resume');
+      var h = $resume.height();
+      // maintain 8.5 x 11" aspect ratio
+      var newH = h <= 0 ? $resume.width() * 11 / 8.5 : 0;
+      $resume.height(newH);
+      $('#resume-container').height(newH);
+    });
+
+    $(window).resize(function() {
+      // resize résumé
+      var $resume = $('iframe#resume');
+      var newH = $resume.width() * 11 / 8.5;
+      $resume.height(newH);
+      $('#resume-container').height(newH);
+    });
+  });
+</script>
 </body>
 </html>

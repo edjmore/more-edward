@@ -17,10 +17,8 @@ $(function() {
     var $a = $(val.first);
     var $li = $(val.second);
     $li.mouseover(function() {
-      $a.addClass('focused');
       $li.addClass('focused');
     }).mouseout(function() {
-      $a.removeClass('focused');
       $li.removeClass('focused');
     });
     // handle click in 'li'
@@ -28,7 +26,7 @@ $(function() {
     $li.click(function() { loadContent($a.attr('href')); });
   });
 
-  // TODO: move to CSS (setup projects drop-down menu)
+  // setup projects drop-down menu
   $('li#projects').mouseover(function() {
     $('#projects-menu').addClass('expanded');
   }).mouseout(function() {

@@ -11,6 +11,79 @@ body {
   background-color: #fafafa;
 }
 
+/* GOL canvas and control menu */
+
+canvas#gol-canvas {
+  border-style: none;
+  border-width: 1px;
+  border-color: lightgrey;
+  position: relative;
+}
+
+div#gol-control-menu {
+  width: calc(16px + 3 * 48px);
+  height: 62px;
+  position: absolute;
+  top: calc(391px - 100px);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+div#gol-control-menu.visible {
+  opacity: .3;
+}
+
+div#gol-control-menu:hover {
+  opacity: .3;
+}
+
+ul#gol-control-menu-list {
+  margin: 0;
+  padding-left: 16px;
+  padding-top: 14px;
+  width: 100%;
+  list-style-type: none;
+  overflow: hidden;
+  position: relative;
+}
+
+ul#gol-control-menu-list li {
+  float: left;
+  transition: .3s;
+  color: darkgrey;
+}
+
+ul#gol-control-menu-list li:hover {
+  cursor: pointer;
+  color: black;
+}
+
+ul#gol-control-menu-list li i {
+  width: 48x;
+  height: 48px;
+  padding: 12px;
+  font-size: 24px;
+  color: inherit;
+}
+
+ul#gol-control-menu-list li i.disabled {
+  cursor: initial;
+  opacity: 0;
+}
+
+/* speed indicator */
+
+span#speed-indicator {
+  position: absolute;
+  width: 100%; /* large enough for any text */
+  color: darkgrey;
+  font-size: 128px;
+  opacity: 0;
+  text-align: center;
+  transition: 0.3s;
+  font-weight: normal;
+}
+
 /* nav menu */
 
 ul.nav {
@@ -20,7 +93,7 @@ ul.nav {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   opacity: 1;
-  box-shadow: 0 1.5px 3px darkgrey;
+  /* box-shadow: 0 1.5px 3px darkgrey; */
   background-color: white;
   display: table;
   position: fixed;
@@ -31,12 +104,13 @@ ul.nav.scrolled {
 }
 
 ul.nav li {
-  transition: .3s;
   display: table-cell;
+  transition: 0.3s;
   position: relative;
 }
 
 ul.nav li.focused {
+  opacity: 0.4;
   cursor: pointer;
 }
 
@@ -45,15 +119,10 @@ ul.nav li a {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  transition: .3s;
-  font-size: 16px;
   color: black;
+  opacity: inherit;
   text-decoration: none;
   position: absolute;
-}
-
-ul.nav li a.focused {
-  color: lightgrey;
 }
 
 /* projects drop-down nav menu */
@@ -95,6 +164,7 @@ ul.dropdown {
   transition: height 3s;
   opacity: 1;
   background-color: white;
+  border-radius: 0 0 2px 2px;
 }
 
 ul.dropdown.scrolled {
@@ -109,7 +179,7 @@ ul.dropdown li {
 }
 
 ul.dropdown li:hover {
-  color: lightgrey;
+  opacity: .4;
   cursor: pointer;
 }
 
@@ -123,6 +193,11 @@ ul.dropdown li a {
   position: absolute;
 }
 
+.content-link {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
 /* project header */
 
 .project-header {
@@ -130,7 +205,7 @@ ul.dropdown li a {
   padding: 0 32px 32px 24px;
 }
 
-.project-header h2 {
+h2 {
   margin: 0;
   padding-bottom: 4px;
   font-size: 32px;
@@ -177,11 +252,11 @@ ul.dropdown li a {
   }
 
   .col-2 {
-    width: 33.33%;
+    width: 55%;
   }
 
   .col-3 {
-    width: 33.33%;
+    width: 45%;
   }
 
   .container img {
@@ -271,6 +346,7 @@ section#main-content {
   padding-top: calc(48px + 32px);
   padding-left: 32px;
   padding-right: 32px;
+  position: relative;
 }
 
 /* view pager */
@@ -323,6 +399,12 @@ div.bar div.container i {
 div.bar div.container i:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+/* embedded YouTube vids */
+
+iframe.opengl-vid {
+  height: 315px;
 }
 
 /* footer */
@@ -425,4 +507,60 @@ ul.social-menu li a i:hover {
 
 .fa-envelope {
   background-color: #dd4b39;
+}
+
+/* professional page */
+
+span#resume-link {
+  cursor: pointer;
+  display: inline;
+  transition: 0.3s;
+  text-align: center;
+}
+
+span#resume-link:hover {
+  opacity: 0.4;
+}
+
+div#resume-container {
+  transition: 0.4s;
+  position: relative;
+  margin-right: 24px;
+}
+
+iframe#resume {
+  position: absolute;
+  width: 100%;
+  margin-right: 24px;
+  height: 0;
+  left: 0;
+  transition: 0.4s;
+  border: none;
+}
+
+/* card */
+
+div.card {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 1.5px 3px darkgrey;
+}
+
+div.card:hover {
+  box-shadow: 0 3px 6px darkgrey;
+}
+
+div.card div.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* attention link */
+
+.attention-link {
+  color: #651FFF; /* #1DE9B6; */
+  font-weight: inherit;
 }

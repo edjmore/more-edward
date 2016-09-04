@@ -3,7 +3,7 @@
 <body>
 <div class="project-header">
   <h2>Diabeto</h2>
-  <span>May 2016</span>
+  <span>April 2016 - May 2016</span>
   <p>
     Created a logbook-style Android application for Type 1 diabetics to record blood glucose levels, carb intake, and insulin dosages. Utilized an SQLite database for local storage, fragments and a nav drawer for the UI, the androidplot library for graphing, background services for recurring notifications, and a custom decision tree implementation for blood glucose prediction.
   </p>
@@ -12,99 +12,88 @@
   <div class="col-1">
     <div class="cell-1">
       <div class="container">
-        <img src="img/aba-startup.png"/>
+        <img src="img/diabeto-nav-drawer.png"/>
         <div class="container-text-outer">
           <div class="container-text">
-            <span>Startup screen is shown on launch during a quick check for new or updated bus stops.</span>
+            <span>The slide-out navigation drawer allows users to switch between fragments.</span>
           </div>
         </div>
       </div>
     </div>
     <div class="cell-2">
       <div class="container">
-        <img src="img/aba-map.png"/>
+        <img src="img/diabeto-view-log.png"/>
         <div class="container-text-outer">
           <div class="container-text">
-            <span>After startup a Google Map view is shown. Users can center on their location and select nearby bus stops.</span>
+            <span>A completed log entry can be edited or deleted using the nav-bar buttons in the top right.</span>
           </div>
         </div>
       </div>
     </div>
     <div class="cell-3">
       <div class="container">
-        <img src="img/aba-nav-menu.png"/>
+        <img src="img/diabeto-status.png"/>
         <div class="container-text-outer">
           <div class="container-text">
-            <span>The slide-out navigation drawer is the app's primary navigation element.</span>
+            <span>The 'status' fragment shows current statistics calculated using today's entries, and user preferences for active insulin time, basal rate, and carbohydrate ratio.</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-2">
+  <div class="col-1">
     <div class="cell-1">
       <div class="container">
-        <img src="img/aba-search-greg.png"/>
+        <img src="img/diabeto-log-input.png"/>
         <div class="container-text-outer">
           <div class="container-text">
-            <span>Users can also find stops by searching using CUMTD's auto-complete API.</span>
+            <span>This log input form provides an easy way for users to record blood glucose, bolus, and/or carbohydrate.</span>
           </div>
         </div>
       </div>
     </div>
     <div class="cell-2">
       <div class="container">
-        <img src="img/aba-recent-searches.png"/>
+        <img src="img/diabeto-expanded-sunday.png"/>
         <div class="container-text-outer">
           <div class="container-text">
-            <span>Up to four of the users most recent stop selections are cached and shown when search is selected.</span>
+            <span>The 'logs' fragment shows an expandable list view organized by date.<br><br>For recent dates, simple identifiers like 'today' or 'Sunday' are used instead of the full date.</span>
           </div>
         </div>
       </div>
     </div>
     <div class="cell-3">
       <div class="container">
-        <img src="img/aba-stopwatch-view.png"/>
+        <img src="img/diabeto-plot.png"/>
         <div class="container-text-outer">
           <div class="container-text">
-            <span>Once a stop is selected, the 'stopwatch' view shows upcoming departures. If the stop has multiple pickup locations, a sliding tab layout allows users to easily switch between them. The stop can be favorited using the star in the top-right corner.</span>
+            <span>When the device is rotated into landscape a graph plotting today's log entries vs. time fills the screen.</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-3">
+  <div class="col-1">
     <div class="cell-1">
       <div class="container">
-        <img src="img/aba-favorites.png"/>
+        <img src="img/diabeto-clock.png"/>
         <div class="container-text-outer">
           <div class="container-text">
-            <span>Favorite stops can be viewed in this fragment. When calculation is complete, the loading indicators are replaced with the distance (in miles) to each stop.</span>
+            <span>The log input form defaults to current date/time, but the user can change either value if necessary.</span>
           </div>
         </div>
       </div>
     </div>
     <div class="cell-2">
       <div class="container">
-        <img src="diabeto-clock.jpg"/>
+        <img src="img/diabeto-log-list-today-expanded.png"/>
         <div class="container-text-outer">
           <div class="container-text">
-            <span>You know, it really doesn’t matter what you write as long as you’ve got a young, and beautiful, piece of text.
-            This placeholder text is gonna be HUGE. We are going to make placeholder text great again. Greater than ever before. I think the only card she has is the Lorem card.</span>
+            <span>Blood glucose readings are color coded acccording to the user's preferences for hypo/hyper-glycemic values.<br><br>New entries can be added using the <i>FloatingActionButton</i> in the bottom-right corner.</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="cell-3">
-      <div class="container">
-        <img src="diabeto-clock.jpg"/>
-        <div class="container-text-outer">
-          <div class="container-text">
-            <span>You know, it really doesn’t matter what you write as long as you’ve got a young, and beautiful, piece of text.
-            This placeholder text is gonna be HUGE. We are going to make placeholder text great again. Greater than ever before. I think the only card she has is the Lorem card.</span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
